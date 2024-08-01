@@ -1,7 +1,6 @@
 import * as React from "react";
 import { View, Text, Image } from "react-native";
 import AppNavigator from "./navigation/AppNavigator";
-// Rest of the import statements
 import {
   Exo2_400Regular,
   Exo2_700Bold,
