@@ -1,34 +1,34 @@
 import * as React from "react";
-import { View, Text } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import LoginScreen from "./screens/LoginScreen";
-import SignupScreen from "./screens/SignupScreen";
-import HomeScreen from "./screens/HomeScreen";
-const Stack = createNativeStackNavigator();
+import { View, Text, Image } from "react-native";
+import AppNavigator from "./navigation/AppNavigator";
+// Rest of the import statements
+import {
+  Exo2_400Regular,
+  Exo2_700Bold,
+  useFonts,
+} from "@expo-google-fonts/exo-2";
+import * as SplashScreen from "expo-splash-screen";
+import { useEffect } from "react";
+
+SplashScreen.preventAutoHideAsync();
 
 function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Login"
-          component={LoginScreen}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Signup"
-          component={SignupScreen}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{ headerShown: false }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+  const [loaded, error] = useFonts({
+    Exo2_400Regular,
+    Exo2_700Bold,
+  });
+
+  useEffect(() => {
+    if (loaded || error) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded, error]);
+
+  if (!loaded && !error) {
+    return null;
+  }
+
+  return <AppNavigator />;
 }
 
 export default App;
