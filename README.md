@@ -2,7 +2,7 @@
 
 ## Overview
 
-**Asher** is a React Native project using Expo, designed to provide a robust and scalable mobile application. This project leverages various libraries and frameworks to deliver a high-quality user experience and streamlined development process.
+**Asher**
 
 ## Table of Contents
 
@@ -22,7 +22,7 @@ To get started with Asher, you need to have Node.js and npm (or yarn) installed 
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/asher.git
+   git clone https://github.com/ifeanyilucky/asher.git
    cd asher
    ```
 
